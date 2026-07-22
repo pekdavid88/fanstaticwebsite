@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FanStaticWeb — Fast, unique websites for hospitality</title>
+    <meta
+      name="description"
+      content="FanStaticWeb builds blazing-fast, mobile-first websites for hotels, apartments and bars. Unique design, pay once, own forever."
+    />
+    <meta property="og:title" content="FanStaticWeb — Websites for hospitality" />
+    <meta
+      property="og:description"
+      content="Fast, unique, mobile-first websites for independent hotels, apartments and bars. Pay once. No monthly fees."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E" />
+    <!-- 1. Gyors előcsatlakozás a Google szervereihez -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- 2. Aszinkron CSS betöltés (nem blokkolja a renderelést) -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          media="print"
+          onload="this.media='all'">
+    
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    </noscript>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ============== HEADER ============== -->
+    <header id="site-header" class="site-header">
+      <div class="header-inner">
+        <a href="#top" class="brand" aria-label="FanStaticWeb home">
+          <img src="images/logo.webp"
+                 alt="FanStaticWeb"
+                 class="brand-logo"
+                 width="280"
+                 height="35"
+                 fetchpriority="high"
+                 decoding="async">
+        </a>
+
+        <nav class="nav-desktop" aria-label="Primary">
+          <a href="index.html#work">Work</a>
+          <a href="index.html#services">Services</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="index.html#process">Process</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+
+        <a href="#contact" class="cta-pill cta-desktop">
+          Start project
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+
+        <button
+          id="menu-toggle"
+          class="menu-btn"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="menu-icon menu-icon-open" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+          </span>
+          <span class="menu-icon menu-icon-close" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ============== MOBILE MENU ============== -->
+    <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+      <div class="mm-backdrop"></div>
+      <div class="mm-blob mm-blob-1"></div>
+      <div class="mm-blob mm-blob-2"></div>
+
+      <div class="mm-content">
+        <p class="mm-eyebrow">Navigate</p>
+        <nav class="mm-nav" aria-label="Mobile">
+          <a href="#work" class="mm-link" style="--i:0">
+            <span class="mm-num">01</span>
+            <span class="mm-body">
+              <span class="mm-label">Work</span>
+              <span class="mm-desc">Recent hospitality launches</span>
+            </span>
+            <span class="mm-arrow">↗</span>
+          </a>
+          <a href="#services" class="mm-link" style="--i:1">
+            <span class="mm-num">02</span>
+            <span class="mm-body">
+              <span class="mm-label">Services</span>
+              <span class="mm-desc">What we build for you</span>
+            </span>
+            <span class="mm-arrow">↗</span>
+          </a>
+          <a href="#pricing" class="mm-link" style="--i:2">
+            <span class="mm-num">03</span>
+            <span class="mm-body">
+              <span class="mm-label">Pricing</span>
+              <span class="mm-desc">Pay once. Own forever.</span>
+            </span>
+            <span class="mm-arrow">↗</span>
+          </a>
+          <a href="#process" class="mm-link" style="--i:3">
+            <span class="mm-num">04</span>
+            <span class="mm-body">
+              <span class="mm-label">Process</span>
+              <span class="mm-desc">From brief to launch in days</span>
+            </span>
+            <span class="mm-arrow">↗</span>
+          </a>
+          <a href="#contact" class="mm-link" style="--i:4">
+            <span class="mm-num">05</span>
+            <span class="mm-body">
+              <span class="mm-label">Contact</span>
+              <span class="mm-desc">Start your project</span>
+            </span>
+            <span class="mm-arrow">↗</span>
+          </a>
+        </nav>
+
+        <div class="mm-footer">
+          <a href="#contact" class="cta-pill cta-block">Start your project ↗</a>
+          <div class="mm-meta">
+            <span>hello@fanstaticweb.site</span>
+            <span>© <span id="year"></span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== HERO ============== -->
+    <main id="top">
+      <section class="hero">
+        <div class="aurora" aria-hidden="true">
+          <div class="blob blob-blue"></div>
+          <div class="blob blob-pink"></div>
+          <div class="blob blob-purple"></div>
+          <div class="grid-overlay"></div>
+        </div>
+
+        <div class="container">
+          <div class="eyebrow rise">
+            <span class="dot"><span class="dot-ping"></span><span class="dot-core"></span></span>
+            <span class="eyebrow-text">Booking Q3 · 2 slots left</span>
+          </div>
+
+          <h1 class="headline rise" style="animation-delay:.05s">
+            <span class="line-static">Lightning-fast sites for</span>
+            <span class="rotator" aria-live="polite">
+              <span class="rotator-word active">hotels.</span>
+              <span class="rotator-word">apartments.</span>
+              <span class="rotator-word">bars.</span>
+              <span class="rotator-word">restaurants.</span>
+              <span class="rotator-word">cafés.</span>
+              <span class="rotator-ghost">hotels.</span>
+            </span>
+          </h1>
+
+          <p class="subhead rise" style="animation-delay:.15s">
+            Handcrafted, mobile-first websites for independent hospitality brands.
+            No bloated WordPress templates. Pay once, own it forever.
+          </p>
+
+          <div class="cta-row rise" style="animation-delay:.25s">
+            <a href="#contact" class="cta-pill cta-primary">
+              Start your project
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+            <a href="#work" class="cta-pill cta-ghost">See recent work</a>
+          </div>
+
+          <div class="marquee rise" style="animation-delay:.35s" aria-hidden="true">
+            <div class="marquee-track">
+              <span class="chip">&lt;Fast.Loading /&gt;</span>
+              <span class="chip">&lt;No.Templates /&gt;</span>
+              <span class="chip">&lt;Mobile.First /&gt;</span>
+              <span class="chip">&lt;Own.Forever /&gt;</span>
+              <span class="chip">&lt;Zero.Fees /&gt;</span>
+              <span class="chip">&lt;Unique.Design /&gt;</span>
+              <span class="chip">&lt;Fast.Loading /&gt;</span>
+              <span class="chip">&lt;No.Templates /&gt;</span>
+              <span class="chip">&lt;Mobile.First /&gt;</span>
+              <span class="chip">&lt;Own.Forever /&gt;</span>
+              <span class="chip">&lt;Zero.Fees /&gt;</span>
+              <span class="chip">&lt;Unique.Design /&gt;</span>
+            </div>
+          </div>
+
+          <div class="phone-wrap rise" style="animation-delay:.45s">
+            <div class="phone-glow"></div>
+            <div class="phone-float">
+              <div class="phone">
+                <div class="phone-screen">
+                  <div class="phone-status">
+                    <span>9:41</span><span>fanstaticweb.site</span>
+                  </div>
+                  <div class="phone-body">
+                    <div class="phone-kicker">Villa Marea · Amalfi</div>
+                    <div class="phone-title">
+                      Rooms with a<br /><span class="grad-text">sea view.</span>
+                    </div>
+                    <div class="phone-cards">
+                      <div class="phone-card">
+                        <div class="pc-label">From</div>
+                        <div class="pc-value">€180 / night</div>
+                      </div>
+                      <div class="phone-card phone-card-cta">
+                        <div class="pc-label">CTA</div>
+                        <div class="pc-value">Book now →</div>
+                      </div>
+                    </div>
+                    <div class="phone-thumbs">
+                      <span></span><span></span><span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="chip-float chip-float-left">
+                <span class="chip-icon">⚡</span>
+                <div>
+                  <div class="chip-label">Score</div>
+                  <div class="chip-value">90+</div>
+                </div>
+              </div>
+              <div class="chip-float chip-float-right">
+                <span class="chip-icon">📱</span>
+                <div>
+                  <div class="chip-label">Speed</div>
+                  <div class="chip-value">Top 1%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-grid rise" style="animation-delay:.55s">
+              <div class="feature">
+                <div class="feature-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                </div>
+                <div class="feature-label">Blazing fast</div>
+                <div class="feature-note">Static, no bloat</div>
+              </div>
+            
+              <div class="feature">
+                <div class="feature-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                  </svg>
+                </div>
+                <div class="feature-label">Mobile-first</div>
+                <div class="feature-note">Built thumb-up</div>
+              </div>
+            
+              <div class="feature">
+                <div class="feature-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                  </svg>
+                </div>
+                <div class="feature-label">Unique design</div>
+                <div class="feature-note">No templates</div>
+              </div>
+            
+              <div class="feature">
+                <div class="feature-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18.178 8c5.096 0 5.096 8 0 8-2.395 0-4.004-1.782-6.178-4C9.826 9.782 8.217 8 5.822 8c-5.096 0-5.096 8 0 8 2.395 0 4.004-1.782 6.178-4 2.174-2.218 3.783-4 6.178-4z"></path>
+                  </svg>
+                </div>
+                <div class="feature-label">Pay once</div>
+                <div class="feature-note">Yours forever</div>
+              </div>
+            </div>
+        </div>
+      </section>
+      
+      <!-- ============== FAQ SECTION ============== -->
+    <section id="faq" class="faq-section fade-in-up">
+      <div class="container">
+        
+        <header class="section-header">
+          <span class="section-badge">Got Questions?</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-desc">
+            Everything you need to know about our handcrafted websites, process, and pricing.
+          </p>
+        </header>
+    
+        <div class="faq-accordion">
+          
+          <!-- FAQ Item 1 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>How fast can my new website be ready?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="faq-answer">
+              <p>We deliver fully functional, high-speed websites in just 5 to 7 business days once we receive your text, images, and brand details.</p>
+            </div>
+          </details>
+    
+          <!-- FAQ Item 2 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Are there any monthly subscription fees?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="faq-answer">
+              <p>No! You pay a single upfront price for the design and code. You own the website 100% forever. The only ongoing costs are your domain and hosting, which usually cost a few euros per month.</p>
+            </div>
+          </details>
+    
+          <!-- FAQ Item 3 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Why are your websites faster than WordPress?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="faq-answer">
+              <p>We build using clean, static Vanilla HTML, CSS, and JS. Unlike WordPress, there are no heavy databases, bloated plugins, or slow page builders, resulting in instant loading and top PageSpeed scores.</p>
+            </div>
+          </details>
+    
+          <!-- FAQ Item 4 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Can guests book directly on the website?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. We can seamlessly integrate direct contact/inquiry forms, WhatsApp instant booking buttons, or embed your existing Channel Manager / PMS booking engine (e.g., SabeeApp, Booking.com widget, Sirvoy).</p>
+            </div>
+          </details>
+    
+          <!-- FAQ Item 5 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Will my website work well on mobile phones?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="faq-answer">
+              <p>Absolutely. We follow a strict Mobile-First approach. Since over 70% of travelers search for accommodations on smartphones, your site is optimized specifically for thumb navigation and fast mobile displays.</p>
+            </div>
+          </details>
+    
+          <!-- FAQ Item 6 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Can I edit the content myself later?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="faq-answer">
+              <p>Since these are custom static websites built for speed and security, they don't rely on complex CMS dashboards. Small text or photo updates can be easily made via simple maintenance requests, or we can connect a lightweight headless CMS if needed.</p>
+            </div>
+          </details>
+    
+          <!-- FAQ Item 7 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>What do I need to prepare before we start?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="faq-answer">
+              <p>Just the basics: high-resolution photos of your property, your room details/amenities, pricing info, and any existing logo or branding materials you have. We take care of everything else!</p>
+            </div>
+          </details>
+    
+          <!-- FAQ Item 8 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>How do we handle web hosting and domain?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="faq-answer">
+              <p>If you already have a domain and hosting provider, we simply deploy the clean files there. If not, we help you set up an affordable, ultra-fast hosting account in your own name so you retain 100% control.</p>
+            </div>
+          </details>
+    
+        </div>
+    
+      </div>
+    </section>
+    
+    <!-- ============== CONTACT SECTION ============== -->
+    <section id="contact" class="contact-section fade-in-up">
+      <div class="container">
+        
+        <header class="section-header">
+          <div class="eyebrow">
+            <span class="eyebrow-text">Get in Touch</span>
+          </div>
+          <h2 class="section-title">Ready to Boost Your Direct Bookings?</h2>
+          <p class="section-desc">
+            Fill out the form below for a free speed & direct booking consultation. We’ll get back to you within 24 hours with a custom proposal.
+          </p>
+        </header>
+    
+        <div class="contact-grid">
+          
+          <!-- Contact Info Box -->
+          <aside class="contact-info">
+            <h3 class="info-title">Let’s discuss your project</h3>
+            <p class="info-text">
+              Have questions about your current setup or want to see a demo? Contact us directly or send a message via the form.
+            </p>
+    
+            <ul class="info-list">
+              <li>
+                <svg class="info-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                <a href="mailto:hello@fanstaticweb.site">hello@fanstaticweb.site</a>
+              </li>
+              <li>
+                <svg class="info-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                </svg>
+                <a href="https://wa.me/+421905707682" target="_blank" rel="noopener">Chat on WhatsApp</a>
+              </li>
+            </ul>
+    
+            <div class="guarantee-badge">
+              <div class="badge-icon-wrap">
+                <svg class="badge-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Fast Response Guaranteed</strong>
+                <p>No waiting weeks for an email response.</p>
+              </div>
+            </div>
+          </aside>
+    
+          <!-- Netlify Contact Form -->
+          <form name="contact" method="POST" data-netlify="true" id="contact-form" class="contact-form">
+            <!-- Rejtett mező a Netlify Form név azonosításához AJAX esetén -->
+            <input type="hidden" name="form-name" value="contact" />
+            
+            <div class="form-group">
+              <label for="name" class="form-label">Your Name / Property Name *</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Villa Sunset Corfu" required>
+            </div>
+    
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address *</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="name@domain.com" required>
+            </div>
+    
+            <div class="form-group">
+              <label for="package-select" class="form-label">Selected Package</label>
+              <select id="package-select" name="package" class="form-select">
+                <option value="starter">Starter (€350 net) — Landing Page</option>
+                <option value="business" selected>Business (€550 net) — Multi-page Website</option>
+                <option value="ultimate">Ultimate (€850 net) — International Turnkey</option>
+                <option value="custom">Custom Request / Consultation</option>
+              </select>
+            </div>
+    
+            <div class="form-group">
+              <label for="website" class="form-label">Current Website (optional)</label>
+              <input type="url" id="website" name="current_website" class="form-input" placeholder="https://yourproperty.com">
+            </div>
+    
+            <div class="form-group">
+              <label for="message" class="form-label">Message / Details *</label>
+              <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Tell us a little bit about your property, current booking channels, or special requirements..." required></textarea>
+            </div>
+    
+            <button type="submit" id="submit-btn" class="cta-pill cta-primary form-submit">
+              <span>Send Inquiry</span>
+            </button>
+          </form>
+    
+        </div>
+    
+      </div>
+    </section>
+    
+    <!-- ============== SUCCESS MODAL (Felugró ablak) ============== -->
+    <div id="success-modal" class="modal-overlay" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <h3 id="modal-title" class="modal-title">Thank You!</h3>
+        <p class="modal-text">
+          We have successfully received your message. A member of our team will get back to you shortly!
+        </p>
+        <button id="close-modal-btn" type="button" class="cta-pill cta-primary modal-btn">Close</button>
+      </div>
+    </div>
+    </main>
+    
+    <!-- ============== FOOTER SECTION ============== -->
+    <footer id="site-footer" class="site-footer">
+      <div class="container">
+        
+        <!-- Mini CTA Banner -->
+        <div class="footer-cta-card">
+          <div class="footer-cta-content">
+            <h3 class="footer-cta-title">Ready for a faster website?</h3>
+            <p class="footer-cta-text">Get a handcrafted, high-speed site for your property in just 5–7 days.</p>
+          </div>
+          <a href="#contact" class="btn btn-primary">
+            <span>Get Started</span>
+            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+    
+        <!-- Main Footer Grid -->
+        <div class="footer-grid">
+          
+          <!-- Brand & Info -->
+          <div class="footer-brand">
+            <a href="#top" class="brand-link" aria-label="FanStaticWeb Home">
+              <img src="images/logo.webp" alt="FanStaticWeb" class="brand-logo" width="280" height="35" loading="lazy">
+            </a>
+            <p class="footer-desc">
+              Handcrafted, ultra-fast websites built specifically for independent apartments, hotels, and pensions.
+            </p>
+            <div class="footer-status">
+              <span class="status-dot"></span>
+              <span class="status-text">Available for new projects</span>
+            </div>
+          </div>
+    
+          <!-- Quick Links -->
+          <nav class="footer-nav" aria-label="Footer Navigation">
+            <h4 class="footer-heading">Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="#services">Services</a></li>
+              <li><a href="#process">How It Works</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </nav>
+    
+          <!-- Contact Info -->
+          <div class="footer-contact">
+            <h4 class="footer-heading">Get in Touch</h4>
+            <address class="contact-address">
+              <a href="mailto:hello@fanstaticweb.site" class="contact-item">
+                <svg class="contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>hello@fanstaticweb.site</span>
+              </a>
+              <a href="https://wa.me/yournumber" target="_blank" rel="noopener" class="contact-item">
+                <svg class="contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+                <span>WhatsApp Pitch</span>
+              </a>
+            </address>
+          </div>
+    
+        </div>
+    
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p class="copyright">&copy; <span id="year">2026</span> FanStaticWeb. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+          </div>
+        </div>
+    
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

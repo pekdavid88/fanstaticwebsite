@@ -61,7 +61,7 @@ button { font: inherit; cursor: pointer; }
   justify-content: space-between;
   gap: 16px;
 }
-.brand-logo { height: 28px; width: auto; }
+.brand-logo { height: 17px; width: auto; }
 
 .nav-desktop { display: none; gap: 32px; }
 .nav-desktop a {
@@ -155,7 +155,13 @@ body.menu-open .menu-icon-close { opacity: 1; transform: rotate(0); }
   pointer-events: none;
   transition: opacity .5s;
   opacity: 0;
+
+  /* + ÚJ: Safari alsó sáv és iOS biztonsági zóna kezelése */
+  height: 100dvh; /* Dinamikus magasság a böngésző UI mozgásának lekövetésére */
+  padding-bottom: env(safe-area-inset-bottom, 2rem); /* Megakadályozza, hogy a sáv kitakarja az alsó linkeket */
+  overflow-y: auto; /* Görgethetőség biztosítása, ha túl sok a menüpont */
 }
+
 body.menu-open .mobile-menu {
   pointer-events: auto;
   opacity: 1;
@@ -545,11 +551,18 @@ body.menu-open .mm-link {
 .chip-value { font-family: var(--font-mono); font-size: 13px; font-weight: 600; }
 
 /* Feature grid */
-.feature-grid {
+/*.feature-grid {
   margin: 56px 0 64px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
+}*/
+
+.feature-grid {
+  margin: 56px 0 64px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
 .feature {
   padding: 16px;
@@ -559,8 +572,16 @@ body.menu-open .mm-link {
   backdrop-filter: blur(10px);
   transition: transform .2s;
 }
+
+/* Feature Item Card */
+/*.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.375rem;
+}*/
 .feature:hover { transform: translateY(-2px); }
-.feature-icon {
+/*.feature-icon {
   width: 36px; height: 36px;
   display: inline-flex;
   align-items: center;
@@ -568,14 +589,45 @@ body.menu-open .mm-link {
   border-radius: 12px;
   background: var(--gradient-brand-soft);
   font-size: 16px;
+}*/
+
+.feature-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.625rem;
+  background: rgba(161, 91, 255, 0.1);
+  border: 1px solid rgba(161, 91, 255, 0.2);
+  color: var(--brand-purple, #a15bff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.25rem;
 }
-.feature-label {
+
+.feature-icon svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  stroke: currentColor;
+}
+
+/*.feature-label {
   margin-top: 12px;
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 14px;
+}*/
+
+.feature-label {
+  font-size: 0.938rem;
+  font-weight: 600;
+  color: var(--fg, #ffffff);
 }
-.feature-note { font-size: 12px; color: var(--muted); }
+/*.feature-note { font-size: 12px; color: var(--muted); }*/
+
+.feature-note {
+  font-size: 0.813rem;
+  color: var(--muted, #a1a1aa);
+}
 
 /* ==========================================================
    RESPONSIVE BREAKPOINTS (Mobile-First expansion)
@@ -621,12 +673,19 @@ body.menu-open .mm-link {
 }
 @media (min-width: 768px) {
   .header-inner { padding: 16px 32px; }
-  .brand-logo { height: 32px; }
+  .brand-logo { height: 17px; }
   .nav-desktop { display: flex; }
   .cta-desktop { display: inline-flex; }
   .menu-btn { display: none; }
   .hero { padding-top: 128px; }
   .headline { font-size: 72px; }
+}
+
+@media (min-width: 48rem) { /* ~768px */
+  .feature-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1783,3 +1842,467 @@ body.menu-open .mm-link {
   }
 }
 
+/* ==========================================================
+   FOOTER SECTION (Mobile-First Vanilla CSS)
+   ========================================================== */
+
+.site-footer {
+  background-color: var(--bg-alt, #0c0d12);
+  border-top: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+  padding-top: 3.5rem;
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+/* Mini CTA Banner */
+.footer-cta-card {
+  background: var(--card, #13151f);
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+  border-radius: 1.25rem;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+  box-shadow: var(--shadow-glow, 0 10px 30px rgba(161, 91, 255, 0.1));
+}
+
+.footer-cta-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-cta-title {
+  font-family: var(--font-display);
+  font-size: 1.375rem; /* ~22px */
+  font-weight: 700;
+  color: var(--fg, #ffffff);
+  margin: 0;
+}
+
+.footer-cta-text {
+  font-size: 0.938rem; /* ~15px */
+  color: var(--muted, #a1a1aa);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Footer Main Grid */
+.footer-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.brand-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.footer-desc {
+  font-size: 0.875rem; /* ~14px */
+  color: var(--muted, #a1a1aa);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 20rem;
+}
+
+/* Status Indicator */
+.footer-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem; /* ~13px */
+  font-weight: 500;
+  color: #4ade80; /* Jól olvasható, élénk zöld szín sötét háttéren */
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  padding: 0.375rem 0.75rem;
+  border-radius: 6.25rem;
+  width: fit-content;
+}
+
+.status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #22c55e;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+  flex-shrink: 0;
+}
+
+/* Footer Headings & Nav */
+.footer-heading {
+  font-family: var(--font-display);
+  font-size: 0.938rem; /* ~15px */
+  font-weight: 600;
+  color: var(--fg, #ffffff);
+  margin: 0 0 1rem 0;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links a {
+  color: var(--muted, #a1a1aa);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--brand-purple, #a15bff);
+}
+
+/* Contact Info */
+.contact-address {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: var(--muted, #a1a1aa);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.contact-item:hover {
+  color: var(--fg, #ffffff);
+}
+
+.contact-icon {
+  stroke: var(--brand-purple, #a15bff);
+  flex-shrink: 0;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 0.813rem; /* ~13px */
+  color: var(--muted, #a1a1aa);
+}
+
+.copyright {
+  margin: 0;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.footer-legal a {
+  color: var(--muted, #a1a1aa);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-legal a:hover {
+  color: var(--fg, #ffffff);
+}
+
+/* ==========================================================
+   RESPONSIVE BREAKPOINTS (Mobile-First expansion)
+   ========================================================== */
+
+/* Tablet (min-width: 768px) */
+@media (min-width: 48rem) {
+  .footer-cta-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* ==========================================================
+   FAQ SECTION (Mobile-First Vanilla CSS)
+   ========================================================== */
+
+.faq-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 48rem; /* ~768px - Kényelmes olvashatósághoz */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* FAQ Item Base */
+.faq-item {
+  background-color: var(--card-bg, #ffffff); /* Ha világos a kártya háttere */
+  border: 1px solid var(--border, rgba(0, 0, 0, 0.1));
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.faq-item[open] {
+  border-color: rgba(161, 91, 255, 0.4);
+  background-color: #fcfcfd; /* Enyhén eltérő háttér kinyitáskor */
+}
+
+/* Question Header (Summary) */
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-display);
+  font-size: 1rem; /* ~16px */
+  font-weight: 600;
+  color: #18181b; /* Sötét zinc/fekete szöveg, ami zárt állapotban is tökéletesen látszik */
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+/* Chrome/Safari nyíl elrejtése */
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-icon {
+  stroke: var(--brand-purple, #a15bff);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+/* Nyíl elforgatása nyitott állapotban */
+.faq-item[open] .faq-icon {
+  transform: rotate(180deg);
+}
+
+/* Answer Body */
+.faq-answer {
+  padding-top: 1rem;
+  margin-top: 0.75rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.faq-answer p {
+  font-size: 0.9375rem; /* ~15px */
+  line-height: 1.6;
+  color: #52525b; /* Jól olvasható sötétszürke válaszszöveg */
+  margin: 0;
+}
+
+/* Desktop finomítás */
+@media (min-width: 48rem) {
+  .faq-section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .faq-question {
+    font-size: 1.125rem; /* ~18px */
+  }
+}
+
+
+/* ==========================================================
+   LEGAL PAGES (Privacy Policy / Terms)
+   ========================================================== */
+
+.legal-page {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
+
+.legal-card {
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border, rgba(0, 0, 0, 0.08));
+  border-radius: 1.25rem;
+  padding: 2rem 1.5rem;
+  max-width: 52rem; /* ~832px - Optimális olvasási szélesség */
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.legal-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.legal-title {
+  font-family: var(--font-display);
+  font-size: 1.875rem; /* ~30px */
+  font-weight: 700;
+  color: #18181b;
+  margin: 0 0 0.5rem 0;
+}
+
+.legal-meta {
+  font-size: 0.875rem; /* ~14px */
+  color: #71717a;
+  margin: 0;
+}
+
+.legal-section {
+  margin-bottom: 2rem;
+}
+
+.legal-section:last-child {
+  margin-bottom: 0;
+}
+
+.legal-header-nav {
+  background-color: var(--bg-alt, #ffffff);
+  border-bottom: 1px solid var(--border, rgba(0, 0, 0, 0.08));
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem; /* ~14px */
+  font-weight: 500;
+  color: #18181b;
+  background-color: #f4f4f5;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0.625rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+  background-color: #e4e4e7;
+  color: #000000;
+}
+
+.back-btn svg {
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+.legal-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.25rem; /* ~20px */
+  font-weight: 600;
+  color: #18181b;
+  margin: 0 0 0.75rem 0;
+}
+
+.legal-section p {
+  font-size: 0.9375rem; /* ~15px */
+  line-height: 1.65;
+  color: #3f3f46;
+  margin: 0 0 1rem 0;
+}
+
+.legal-section ul {
+  margin: 0 0 1rem 1.25rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.legal-section li {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #3f3f46;
+}
+
+.legal-address {
+  font-style: normal;
+  background-color: #f4f4f5;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.legal-address p {
+  margin: 0 0 0.25rem 0;
+}
+
+.legal-address p:last-child {
+  margin: 0;
+}
+
+.legal-address a {
+  color: var(--brand-purple, #8b5cf6);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.legal-address a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Desktop Media Query (min-width: 768px) */
+@media (min-width: 48rem) {
+  .legal-page {
+    padding-top: 5rem;
+    padding-bottom: 7rem;
+  }
+
+  .legal-card {
+    padding: 3.5rem 3rem;
+  }
+
+  .legal-title {
+    font-size: 2.5rem; /* ~40px */
+  }
+
+  .legal-section h2 {
+    font-size: 1.375rem; /* ~22px */
+  }
+}
