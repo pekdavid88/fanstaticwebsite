@@ -1,0 +1,885 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FanStaticWeb — Fast, unique websites for hospitality</title>
+    <meta
+      name="description"
+      content="FanStaticWeb builds blazing-fast, mobile-first websites for hotels, apartments and bars. Unique design, pay once, own forever."
+    />
+    <meta property="og:title" content="FanStaticWeb — Websites for hospitality" />
+    <meta
+      property="og:description"
+      content="Fast, unique, mobile-first websites for independent hotels, apartments and bars. Pay once. No monthly fees."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ============== HEADER ============== -->
+    <header id="site-header" class="site-header">
+      <div class="header-inner">
+        <a href="#top" class="brand" aria-label="FanStaticWeb home">
+          <img src="images/logo.png" alt="FanStaticWeb" class="brand-logo" />
+        </a>
+
+        <nav class="nav-desktop" aria-label="Primary">
+          <a href="#work">Work</a>
+          <a href="#services">Services</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#contact" class="cta-pill cta-desktop">
+          Start project
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+
+        <button
+          id="menu-toggle"
+          class="menu-btn"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="menu-icon menu-icon-open" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+          </span>
+          <span class="menu-icon menu-icon-close" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ============== MOBILE MENU ============== -->
+    <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+      <div class="mm-backdrop"></div>
+      <div class="mm-blob mm-blob-1"></div>
+      <div class="mm-blob mm-blob-2"></div>
+
+      <div class="mm-content">
+        <p class="mm-eyebrow">Navigate</p>
+        <nav class="mm-nav" aria-label="Mobile">
+          <a href="#work" class="mm-link" style="--i:0">
+            <span class="mm-num">01</span>
+            <span class="mm-body">
+              <span class="mm-label">Work</span>
+              <span class="mm-desc">Recent hospitality launches</span>
+            </span>
+            <span class="mm-arrow">↗</span>
+          </a>
+          <a href="#services" class="mm-link" style="--i:1">
+            <span class="mm-num">02</span>
+            <span class="mm-body">
+              <span class="mm-label">Services</span>
+              <span class="mm-desc">What we build for you</span>
+            </span>
+            <span class="mm-arrow">↗</span>
+          </a>
+          <a href="#pricing" class="mm-link" style="--i:2">
+            <span class="mm-num">03</span>
+            <span class="mm-body">
+              <span class="mm-label">Pricing</span>
+              <span class="mm-desc">Pay once. Own forever.</span>
+            </span>
+            <span class="mm-arrow">↗</span>
+          </a>
+          <a href="#process" class="mm-link" style="--i:3">
+            <span class="mm-num">04</span>
+            <span class="mm-body">
+              <span class="mm-label">Process</span>
+              <span class="mm-desc">From brief to launch in days</span>
+            </span>
+            <span class="mm-arrow">↗</span>
+          </a>
+          <a href="#contact" class="mm-link" style="--i:4">
+            <span class="mm-num">05</span>
+            <span class="mm-body">
+              <span class="mm-label">Contact</span>
+              <span class="mm-desc">Start your project</span>
+            </span>
+            <span class="mm-arrow">↗</span>
+          </a>
+        </nav>
+
+        <div class="mm-footer">
+          <a href="#contact" class="cta-pill cta-block">Start your project ↗</a>
+          <div class="mm-meta">
+            <span>hello@fanstaticweb.site</span>
+            <span>© <span id="year"></span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== HERO ============== -->
+    <main id="top">
+      <section class="hero">
+        <div class="aurora" aria-hidden="true">
+          <div class="blob blob-blue"></div>
+          <div class="blob blob-pink"></div>
+          <div class="blob blob-purple"></div>
+          <div class="grid-overlay"></div>
+        </div>
+
+        <div class="container">
+          <div class="eyebrow rise">
+            <span class="dot"><span class="dot-ping"></span><span class="dot-core"></span></span>
+            <span class="eyebrow-text">Booking Q3 · 2 slots left</span>
+          </div>
+
+          <h1 class="headline rise" style="animation-delay:.05s">
+            <span class="line-static">Lightning-fast sites for</span>
+            <span class="rotator" aria-live="polite">
+              <span class="rotator-word active">hotels.</span>
+              <span class="rotator-word">apartments.</span>
+              <span class="rotator-word">bars.</span>
+              <span class="rotator-word">restaurants.</span>
+              <span class="rotator-word">cafés.</span>
+              <span class="rotator-ghost">hotels.</span>
+            </span>
+          </h1>
+
+          <p class="subhead rise" style="animation-delay:.15s">
+            Handcrafted, mobile-first websites for independent hospitality brands.
+            No bloated WordPress templates. Pay once, own it forever.
+          </p>
+
+          <div class="cta-row rise" style="animation-delay:.25s">
+            <a href="#contact" class="cta-pill cta-primary">
+              Start your project
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+            <a href="#work" class="cta-pill cta-ghost">See recent work</a>
+          </div>
+
+          <div class="marquee rise" style="animation-delay:.35s" aria-hidden="true">
+            <div class="marquee-track">
+              <span class="chip">&lt;Fast.Loading /&gt;</span>
+              <span class="chip">&lt;No.Templates /&gt;</span>
+              <span class="chip">&lt;Mobile.First /&gt;</span>
+              <span class="chip">&lt;Own.Forever /&gt;</span>
+              <span class="chip">&lt;Zero.Fees /&gt;</span>
+              <span class="chip">&lt;Unique.Design /&gt;</span>
+              <span class="chip">&lt;Fast.Loading /&gt;</span>
+              <span class="chip">&lt;No.Templates /&gt;</span>
+              <span class="chip">&lt;Mobile.First /&gt;</span>
+              <span class="chip">&lt;Own.Forever /&gt;</span>
+              <span class="chip">&lt;Zero.Fees /&gt;</span>
+              <span class="chip">&lt;Unique.Design /&gt;</span>
+            </div>
+          </div>
+
+          <div class="phone-wrap rise" style="animation-delay:.45s">
+            <div class="phone-glow"></div>
+            <div class="phone-float">
+              <div class="phone">
+                <div class="phone-screen">
+                  <div class="phone-status">
+                    <span>9:41</span><span>fanstaticweb.site</span>
+                  </div>
+                  <div class="phone-body">
+                    <div class="phone-kicker">Villa Marea · Amalfi</div>
+                    <div class="phone-title">
+                      Rooms with a<br /><span class="grad-text">sea view.</span>
+                    </div>
+                    <div class="phone-cards">
+                      <div class="phone-card">
+                        <div class="pc-label">From</div>
+                        <div class="pc-value">€180 / night</div>
+                      </div>
+                      <div class="phone-card phone-card-cta">
+                        <div class="pc-label">CTA</div>
+                        <div class="pc-value">Book now →</div>
+                      </div>
+                    </div>
+                    <div class="phone-thumbs">
+                      <span></span><span></span><span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="chip-float chip-float-left">
+                <span class="chip-icon">⚡</span>
+                <div>
+                  <div class="chip-label">Lighthouse</div>
+                  <div class="chip-value">100 / 100</div>
+                </div>
+              </div>
+              <div class="chip-float chip-float-right">
+                <span class="chip-icon">📱</span>
+                <div>
+                  <div class="chip-label">Loads in</div>
+                  <div class="chip-value">0.4s</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-grid rise" style="animation-delay:.55s">
+            <div class="feature">
+              <div class="feature-icon">⚡</div>
+              <div class="feature-label">Blazing fast</div>
+              <div class="feature-note">Static, no bloat</div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">📱</div>
+              <div class="feature-label">Mobile-first</div>
+              <div class="feature-note">Built thumb-up</div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">✨</div>
+              <div class="feature-label">Unique design</div>
+              <div class="feature-note">No templates</div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">∞</div>
+              <div class="feature-label">Pay once</div>
+              <div class="feature-note">Yours forever</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- ============== WORK / PORTFOLIO SECTION ============== -->
+    <section id="work" class="work-section">
+      <div class="container">
+        
+        <header class="section-header fade-in-up">
+          <div class="eyebrow">
+            <span class="eyebrow-text">Portfolio</span>
+          </div>
+          <h2 class="section-title">Selected Hospitality Works</h2>
+          <p class="section-desc">
+            Handcrafted digital experiences designed for boutique hotels, holiday apartments, and lively venues. Fast, conversion-focused, and mobile-ready.
+          </p>
+        </header>
+    
+        <div class="work-grid">
+          
+          <!-- Project 1: Villa Marea -->
+          <article class="project-card fade-in-up delay-1">
+            <div class="project-preview">
+              <div class="project-badge">Concept · Hotel</div>
+              <div class="project-mockup">
+                <div class="mockup-header">
+                  <span class="mockup-dots"></span>
+                  <span class="mockup-url">villamarea.com</span>
+                </div>
+                <div class="mockup-screen screen-marea">
+                  <div class="mockup-hero-text">
+                    <span class="marea-tag">Amalfi Coast</span>
+                    <span class="marea-title">Luxury Sea Suites</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-type">Boutique Hotel</span>
+                <span class="project-speed">⚡ 0.3s Load</span>
+              </div>
+              <h3 class="project-title">Villa Marea</h3>
+              <p class="project-desc">
+                A high-converting, image-rich landing page for a luxury Amalfi Coast villa featuring direct booking integration and dynamic room showcases.
+              </p>
+              <ul class="project-tags">
+                <li>Mobile-First</li>
+                <li>Direct Booking</li>
+                <li>100 PageSpeed</li>
+              </ul>
+            </div>
+          </article>
+    
+          <!-- Project 2: Casa Lumina -->
+          <article class="project-card fade-in-up delay-2">
+            <div class="project-preview">
+              <div class="project-badge">Concept · Apartments</div>
+              <div class="project-mockup">
+                <div class="mockup-header">
+                  <span class="mockup-dots"></span>
+                  <span class="mockup-url">casalumina.site</span>
+                </div>
+                <div class="mockup-screen screen-lumina">
+                  <div class="mockup-hero-text">
+                    <span class="lumina-tag">Corfu Island</span>
+                    <span class="lumina-title">Modern Holiday Suites</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-type">Holiday Rentals</span>
+                <span class="project-speed">⚡ 0.4s Load</span>
+              </div>
+              <h3 class="project-title">Casa Lumina</h3>
+              <p class="project-desc">
+                A sleek multi-unit showcase site for Mediterranean apartments, optimized for quick WhatsApp inquiries and mobile browsing.
+              </p>
+              <ul class="project-tags">
+                <li>WhatsApp Lead Sync</li>
+                <li>Multi-Language</li>
+                <li>Zero Monthly Fees</li>
+              </ul>
+            </div>
+          </article>
+    
+          <!-- Project 3: Velvet & Vine -->
+          <article class="project-card fade-in-up delay-3">
+            <div class="project-preview">
+              <div class="project-badge">Concept · Bar & Lounge</div>
+              <div class="project-mockup">
+                <div class="mockup-header">
+                  <span class="mockup-dots"></span>
+                  <span class="mockup-url">velvetandvine.bar</span>
+                </div>
+                <div class="mockup-screen screen-velvet">
+                  <div class="mockup-hero-text">
+                    <span class="velvet-tag">Nightlife</span>
+                    <span class="velvet-title">Cocktail & Gastro Lounge</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-type">Bar & Restaurant</span>
+                <span class="project-speed">⚡ 0.3s Load</span>
+              </div>
+              <h3 class="project-title">Velvet & Vine</h3>
+              <p class="project-desc">
+                Dark-mode atmospheric single-page website with digital QR menu access, event scheduling, and table reservation flow.
+              </p>
+              <ul class="project-tags">
+                <li>Digital Menu</li>
+                <li>Table Booking</li>
+                <li>Ultra Fast</li>
+              </ul>
+            </div>
+          </article>
+    
+        </div>
+    
+        <!-- Callout Banner inside Work section -->
+        <div class="work-cta-card fade-in-up">
+          <div class="work-cta-content">
+              <div class="work-cta-icon-wrap">
+                <svg class="work-cta-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                </svg>
+              </div>
+              <h3 class="work-cta-title">Want your brand featured here next?</h3>
+              <p class="work-cta-text">
+                We deliver custom, high-speed websites built specifically for independent hospitality businesses in just 5–7 days.
+              </p>
+            </div>
+          <a href="#contact" class="cta-pill cta-primary">
+            Claim your website
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+        </div>
+    
+      </div>
+    </section>
+    
+    <!-- ============== SERVICES SECTION ============== -->
+    <section id="services" class="services-section">
+      <div class="container">
+        
+        <header class="section-header fade-in-up">
+          <div class="eyebrow">
+            <span class="eyebrow-text">Services</span>
+          </div>
+          <h2 class="section-title">Built for Direct Bookings & High Speed</h2>
+          <p class="section-desc">
+            Everything you need to turn visitors into direct guests. No complex content management, no monthly software subscriptions, and zero maintenance headaches.
+          </p>
+        </header>
+    
+        <div class="services-grid">
+          
+          <!-- Service 1: Speed -->
+          <article class="service-card fade-in-up delay-1">
+            <div class="service-icon-wrap">
+              <svg class="service-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Blazing-Fast Performance</h3>
+            <p class="service-text">
+              Handcrafted static websites that load in under 0.5 seconds. No bloated plugins or database queries—keeping your Google Lighthouse score at a perfect 100.
+            </p>
+            <ul class="service-features">
+              <li>100 / 100 PageSpeed score</li>
+              <li>Instant page transitions</li>
+              <li>Better Google Search ranking</li>
+            </ul>
+          </article>
+    
+          <!-- Service 2: Mobile First -->
+          <article class="service-card fade-in-up delay-2">
+            <div class="service-icon-wrap">
+              <svg class="service-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                <line x1="12" y1="18" x2="12.01" y2="18"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Mobile-First UI & UX</h3>
+            <p class="service-text">
+              Over 80% of travel bookings happen on smartphones. We design thumb-friendly layouts engineered specifically for mobile browsers and quick decisions.
+            </p>
+            <ul class="service-features">
+              <li>Thumb-oriented navigation</li>
+              <li>Optimized media delivery</li>
+              <li>Seamless tap-to-call / SMS</li>
+            </ul>
+          </article>
+    
+          <!-- Service 3: Direct Booking -->
+          <article class="service-card fade-in-up delay-3">
+            <div class="service-icon-wrap">
+              <svg class="service-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Direct Booking & Lead Sync</h3>
+            <p class="service-text">
+              Bypass OTA commissions with direct inquiry forms, instant WhatsApp chat links, and direct booking engine integrations tailored to your venue.
+            </p>
+            <ul class="service-features">
+              <li>WhatsApp & Email lead sync</li>
+              <li>Zero commission fees</li>
+              <li>Custom inquiry widgets</li>
+            </ul>
+          </article>
+    
+          <!-- Service 4: Custom Design -->
+          <article class="service-card fade-in-up delay-4">
+            <div class="service-icon-wrap">
+              <svg class="service-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                <path d="M2 2l7.586 7.586"/>
+                <circle cx="11" cy="11" r="2"/>
+              </svg>
+            </div>
+            <h3 class="service-title">100% Custom Design</h3>
+            <p class="service-text">
+              Stand out from generic WordPress templates. Your website gets a completely unique, handcrafted design matching your property’s atmosphere.
+            </p>
+            <ul class="service-features">
+              <li>Tailored typography & colors</li>
+              <li>High-res gallery displays</li>
+              <li>Unique brand identity</li>
+            </ul>
+          </article>
+    
+          <!-- Service 5: Multi-Language -->
+          <article class="service-card fade-in-up delay-5">
+            <div class="service-icon-wrap">
+              <svg class="service-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Multi-Language Ready</h3>
+            <p class="service-text">
+              Reach international tourists effortlessly. We implement clean, fast multi-language toggles to serve guests in English, German, Italian, or local languages.
+            </p>
+            <ul class="service-features">
+              <li>SEO-friendly language switching</li>
+              <li>Localized content layout</li>
+              <li>Fast translation loading</li>
+            </ul>
+          </article>
+    
+          <!-- Service 6: Pay Once -->
+          <article class="service-card fade-in-up delay-6">
+            <div class="service-icon-wrap">
+              <svg class="service-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Pay Once, Own Forever</h3>
+            <p class="service-text">
+              No recurring agency retainers, hidden subscription fees, or vendor lock-in. You own 100% of the code and assets forever with zero ongoing costs.
+            </p>
+            <ul class="service-features">
+              <li>No monthly platform fees</li>
+              <li>Full code ownership</li>
+              <li>Free high-speed hosting option</li>
+            </ul>
+          </article>
+    
+        </div>
+    
+      </div>
+    </section>
+    
+    <!-- ============== PROCESS SECTION ============== -->
+    <section id="process" class="process-section">
+      <div class="container">
+        
+        <header class="section-header fade-in-up">
+          <div class="eyebrow">
+            <span class="eyebrow-text">How It Works</span>
+          </div>
+          <h2 class="section-title">4 Simple Steps to Your New Website</h2>
+          <p class="section-desc">
+            No technical jargon, no endless meetings. We handle everything from code to launch in under two weeks.
+          </p>
+        </header>
+    
+        <div class="process-grid">
+          
+          <!-- Step 1 -->
+          <article class="process-card fade-in-up delay-1">
+            <div class="process-step-badge">01</div>
+            <div class="process-content">
+              <div class="process-icon-wrap">
+                <svg class="process-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </div>
+              <h3 class="process-title">Free Speed Audit & Brief</h3>
+              <p class="process-text">
+                We analyze your current website (or property details), review your goals, and select the optimal package for your budget.
+              </p>
+            </div>
+          </article>
+    
+          <!-- Step 2 -->
+          <article class="process-card fade-in-up delay-2">
+            <div class="process-step-badge">02</div>
+            <div class="process-content">
+              <div class="process-icon-wrap">
+                <svg class="process-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3 class="process-title">Handcrafted Development</h3>
+              <p class="process-text">
+                We write clean, lightweight HTML/CSS code tailored specifically to your venue, optimizing images and localizing content for high conversion.
+              </p>
+            </div>
+          </article>
+    
+          <!-- Step 3 -->
+          <article class="process-card fade-in-up delay-3">
+            <div class="process-step-badge">03</div>
+            <div class="process-content">
+              <div class="process-icon-wrap">
+                <svg class="process-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <h3 class="process-title">Review & Refine</h3>
+              <p class="process-text">
+                You test the live preview link on your smartphone and desktop. We fine-tune any text, photos, or booking forms based on your feedback.
+              </p>
+            </div>
+          </article>
+    
+          <!-- Step 4 -->
+          <article class="process-card fade-in-up delay-4">
+            <div class="process-step-badge">04</div>
+            <div class="process-content">
+              <div class="process-icon-wrap">
+                <svg class="process-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+                  <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-3.05 11a22.35 22.35 0 0 1-3.95 2z"></path>
+                </svg>
+              </div>
+              <h3 class="process-title">Domain Sync & Go Live</h3>
+              <p class="process-text">
+                We deploy your site to ultra-fast global hosting, point your domain, and hand over 100% of the source code. You're ready to get direct bookings!
+              </p>
+            </div>
+          </article>
+    
+        </div>
+    
+      </div>
+    </section>
+    
+    <!-- ============== PRICING SECTION ============== -->
+    <section id="pricing" class="pricing-section fade-in-up">
+      <div class="container">
+        
+        <header class="section-header">
+          <div class="eyebrow">
+            <span class="eyebrow-text">Transparent Pricing</span>
+          </div>
+          <h2 class="section-title">Pay Once. Own Forever. Zero Monthly Fees.</h2>
+          <p class="section-desc">
+            No WordPress bloat, no subscription traps, and no recurring agency retainers. Clear net pricing tailored for independent hospitality businesses.
+          </p>
+        </header>
+    
+        <!-- Pricing Cards Grid -->
+        <div class="pricing-grid">
+          
+          <!-- Tier 1: Starter (Landing Page) -->
+          <article class="pricing-card fade-in-up delay-1">
+            <div class="pricing-header">
+              <span class="pricing-badge">Digital Business Card</span>
+              <h3 class="pricing-title">Starter</h3>
+              <p class="pricing-subtitle">Ideal for single apartments or small venues launching their online presence.</p>
+              <div class="pricing-price">
+                <span class="price-currency">€</span>
+                <span class="price-amount">350</span>
+                <span class="price-period">/ net</span>
+              </div>
+            </div>
+    
+            <ul class="pricing-features">
+              <li><strong>1-Page</strong> high-converting landing page</li>
+              <li>Hero, Services, Gallery & Reviews</li>
+              <li>Functional contact & booking form</li>
+              <li>Basic technical SEO & meta setup</li>
+              <li>100/100 PageSpeed optimization</li>
+              <li>Delivery in <strong>5–7 business days</strong></li>
+            </ul>
+    
+            <a href="#contact" class="cta-pill cta-ghost pricing-cta">Select Starter</a>
+          </article>
+    
+          <!-- Tier 2: Business (Popular / Multi-page) -->
+          <article class="pricing-card pricing-card-featured fade-in-up delay-2">
+            <div class="featured-tag">Most Popular</div>
+            <div class="pricing-header">
+              <span class="pricing-badge">The Pro Choice</span>
+              <h3 class="pricing-title">Business</h3>
+              <p class="pricing-subtitle">Perfect for established properties wanting dedicated pages and lead management.</p>
+              <div class="pricing-price">
+                <span class="price-currency">€</span>
+                <span class="price-amount">550</span>
+                <span class="price-period">/ net</span>
+              </div>
+            </div>
+    
+            <ul class="pricing-features">
+              <li><strong>Everything in Starter, plus:</strong></li>
+              <li><strong>3 to 5 static subpages</strong> (Rooms, Rates, About...)</li>
+              <li>Smart inquiry system (Airtable lead sync)</li>
+              <li>Custom design fine-tuning</li>
+              <li>Free setup on ultra-fast hosting</li>
+              <li>No CMS to maintain or get hacked</li>
+              <li>Delivery in <strong>7–10 business days</strong></li>
+            </ul>
+    
+            <a href="#contact" class="cta-pill cta-primary pricing-cta">Select Business</a>
+          </article>
+    
+          <!-- Tier 3: Ultimate (International Turnkey) -->
+          <article class="pricing-card fade-in-up delay-3">
+            <div class="pricing-header">
+              <span class="pricing-badge">Turnkey Solution</span>
+              <h3 class="pricing-title">Ultimate</h3>
+              <p class="pricing-subtitle">For premium boutique hotels demanding multi-language support & calendar sync.</p>
+              <div class="pricing-price">
+                <span class="price-currency">€</span>
+                <span class="price-amount">850</span>
+                <span class="price-period">/ net</span>
+              </div>
+            </div>
+    
+            <ul class="pricing-features fade-in-up">
+              <li><strong>Everything in Business, plus:</strong></li>
+              <li><strong>Built-in Dual Language</strong> (e.g. EN + DE/HU)</li>
+              <li>Live Booking.com / OTA calendar sync (iCal)</li>
+              <li>Automated date blocking engine</li>
+              <li>Interactive Google Maps & local guide</li>
+              <li>Priority launch support</li>
+            </ul>
+    
+            <a href="#contact" class="cta-pill cta-ghost pricing-cta">Select Ultimate</a>
+          </article>
+    
+        </div>
+    
+        <!-- Add-ons & Extra Services -->
+        <div class="addons-wrap fade-in-up">
+          <h3 class="addons-title">Optional Add-ons & Customization</h3>
+          <div class="addons-grid">
+            
+            <div class="addon-item">
+              <div class="addon-info">
+                <span class="addon-name">Additional Language Version</span>
+                <p class="addon-desc">Separate, SEO-optimized URL structure (/en/) with fully synchronized layout and forms.</p>
+              </div>
+              <div class="addon-price">+€100 <small>/ language</small></div>
+            </div>
+    
+            <div class="addon-item">
+              <div class="addon-info">
+                <span class="addon-name">Additional Static Subpage</span>
+                <p class="addon-desc">Extra custom designed subpage for menu cards, local attractions, or house rules.</p>
+              </div>
+              <div class="addon-price">+€60 <small>/ page</small></div>
+            </div>
+    
+            <div class="addon-item">
+              <div class="addon-info">
+                <span class="addon-name">External Calendar / Booking Widget</span>
+                <p class="addon-desc">Integration with external booking engines (e.g. Booking.com, Airbnb, Sirvoy).</p>
+              </div>
+              <div class="addon-price">+€80 <small>one-time</small></div>
+            </div>
+    
+          </div>
+        </div>
+    
+        <!-- Zero Monthly Fee Value Guarantee Banner -->
+        <div class="value-guarantee fade-in-up">
+          <div class="guarantee-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="guarantee-text">
+            <strong>100% Zero Monthly Maintenance Guarantee:</strong>
+            Because your website is crafted with pure Vanilla code (HTML/CSS/JS), there are no database vulnerabilities, no plugin updates, and no mandatory maintenance retainers. Your only ongoing cost is your standard minimal annual domain & hosting fee (approx. €15–20/year).
+          </div>
+        </div>
+    
+      </div>
+    </section>
+    
+    <!-- ============== CONTACT SECTION ============== -->
+    <section id="contact" class="contact-section fade-in-up">
+      <div class="container">
+        
+        <header class="section-header">
+          <div class="eyebrow">
+            <span class="eyebrow-text">Get in Touch</span>
+          </div>
+          <h2 class="section-title">Ready to Boost Your Direct Bookings?</h2>
+          <p class="section-desc">
+            Fill out the form below for a free speed & direct booking consultation. We’ll get back to you within 24 hours with a custom proposal.
+          </p>
+        </header>
+    
+        <div class="contact-grid">
+          
+          <!-- Contact Info Box -->
+          <aside class="contact-info">
+            <h3 class="info-title">Let’s discuss your project</h3>
+            <p class="info-text">
+              Have questions about your current setup or want to see a demo? Contact us directly or send a message via the form.
+            </p>
+    
+            <ul class="info-list">
+              <li>
+                <svg class="info-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                <a href="mailto:hello@fanstaticweb.site">hello@fanstaticweb.site</a>
+              </li>
+              <li>
+                <svg class="info-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                </svg>
+                <a href="https://wa.me/+421905707682" target="_blank" rel="noopener">Chat on WhatsApp</a>
+              </li>
+            </ul>
+    
+            <div class="guarantee-badge">
+              <div class="badge-icon-wrap">
+                <svg class="badge-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Fast Response Guaranteed</strong>
+                <p>No waiting weeks for an email response.</p>
+              </div>
+            </div>
+          </aside>
+    
+          <!-- Netlify Contact Form -->
+          <form name="contact" method="POST" data-netlify="true" id="contact-form" class="contact-form">
+            <!-- Rejtett mező a Netlify Form név azonosításához AJAX esetén -->
+            <input type="hidden" name="form-name" value="contact" />
+            
+            <div class="form-group">
+              <label for="name" class="form-label">Your Name / Property Name *</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Villa Sunset Corfu" required>
+            </div>
+    
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address *</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="name@domain.com" required>
+            </div>
+    
+            <div class="form-group">
+              <label for="package-select" class="form-label">Selected Package</label>
+              <select id="package-select" name="package" class="form-select">
+                <option value="starter">Starter (€350 net) — Landing Page</option>
+                <option value="business" selected>Business (€550 net) — Multi-page Website</option>
+                <option value="ultimate">Ultimate (€850 net) — International Turnkey</option>
+                <option value="custom">Custom Request / Consultation</option>
+              </select>
+            </div>
+    
+            <div class="form-group">
+              <label for="website" class="form-label">Current Website (optional)</label>
+              <input type="url" id="website" name="current_website" class="form-input" placeholder="https://yourproperty.com">
+            </div>
+    
+            <div class="form-group">
+              <label for="message" class="form-label">Message / Details *</label>
+              <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Tell us a little bit about your property, current booking channels, or special requirements..." required></textarea>
+            </div>
+    
+            <button type="submit" id="submit-btn" class="cta-pill cta-primary form-submit">
+              <span>Send Inquiry</span>
+            </button>
+          </form>
+    
+        </div>
+    
+      </div>
+    </section>
+    
+    <!-- ============== SUCCESS MODAL (Felugró ablak) ============== -->
+    <div id="success-modal" class="modal-overlay" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <h3 id="modal-title" class="modal-title">Thank You!</h3>
+        <p class="modal-text">
+          We have successfully received your message. A member of our team will get back to you shortly!
+        </p>
+        <button id="close-modal-btn" type="button" class="cta-pill cta-primary modal-btn">Close</button>
+      </div>
+    </div>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
