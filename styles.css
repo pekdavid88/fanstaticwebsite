@@ -2544,7 +2544,7 @@ body.menu-open .mm-link {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Ez adja a klasszikus, elegáns parallax hatást */
+  /*background-attachment: fixed;*/ /* Ez adja a klasszikus, elegáns parallax hatást */
   
   padding-block: 5rem;
   padding-inline: 1.5rem;
@@ -2652,6 +2652,7 @@ body.menu-open .mm-link {
   .fluid-words-section {
     min-height: 38rem;
     padding-block: 7rem;
+    background-attachment: fixed;
   }
 
   .water-surface {
