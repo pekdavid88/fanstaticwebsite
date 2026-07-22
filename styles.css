@@ -2468,6 +2468,7 @@ body.menu-open .mm-link {
   /* Utazás + Sebesség témájú háttérkép (Unsplash) */
   background-image: url('images/parallax-bg-2.webp');
   background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   
