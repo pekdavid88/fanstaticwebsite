@@ -19,10 +19,43 @@
   --gradient-brand-soft: linear-gradient(120deg, rgba(106,139,255,.15), rgba(161,91,255,.15), rgba(255,91,179,.15));
   --shadow-glow: 0 20px 60px -20px rgba(161,91,255,.5), 0 10px 30px -15px rgba(255,91,179,.35);
   --radius: 14px;
-
+  
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* ==========================================================
+   2. REUSABLE SECTION BACKGROUNDS — Változatos szekciók
+   ========================================================== */
+
+/* Alapértelmezett sötét szekció */
+.section-dark {
+  background-color: var(--bg-dark);
+}
+
+/* Alternatív sötét szekció (ritmusváltás a szekciók között) */
+.section-alt {
+  background-color: var(--bg-dark-alt);
+}
+
+/* Finom technológiai négyzethálós háttér (pl. Services / Process részekhez) */
+.section-grid {
+  background-color: var(--bg-dark);
+  background-image:
+    linear-gradient(var(--grid-line-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line-color) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+}
+
+/* Kiemelt szekció "Spotlight" (pl. Pricing vagy Contact részhez) */
+.section-spotlight {
+  background-color: var(--bg-dark);
+  background-image: radial-gradient(
+    circle at 50% 0%,
+    rgba(106, 139, 255, 0.15) 0%,
+    var(--bg-dark) 70%
+  );
 }
 
 * { box-sizing: border-box; }
@@ -139,6 +172,32 @@ button { font: inherit; cursor: pointer; }
   background: var(--gradient-brand);
   box-shadow: var(--shadow-glow);
   text-decoration: none;
+}
+
+/* Ragyogó, prémium gomb stílus a cinematic szekcióhoz */
+.cta-glow {
+  background: linear-gradient(135deg, #ff5bb3, #8b5cf6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* A ragyogó (glow) hatás több rétegű árnyékkal (box-shadow) */
+  box-shadow: 0 0 1.5rem rgba(255, 91, 179, 0.4),
+              inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+/* Hover és Focus állapotok - Kiemelkedik és jobban ragyog */
+.cta-glow:hover,
+.cta-glow:focus-visible {
+  background: linear-gradient(135deg, #ff7bc1, #9d75f8);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-0.125rem); /* Finom emelkedés felfelé */
+  box-shadow: 0 0.5rem 2rem rgba(255, 91, 179, 0.6),
+              inset 0 1px 1px rgba(255, 255, 255, 0.5);
+  outline: none;
+}
+
+/* Aktív (kattintás) állapot */
+.cta-glow:active {
+  transform: translateY(0);
+  box-shadow: 0 0.25rem 1rem rgba(255, 91, 179, 0.5);
 }
 
 /* Hamburger button */
@@ -2339,5 +2398,235 @@ body.menu-open .mm-link {
 
   .legal-section h2 {
     font-size: 1.375rem; /* ~22px */
+  }
+}
+
+/* ==========================================================
+   SPEED PARALLAX SECTION (VERTICAL SCROLL EFFECT)
+   ========================================================== */
+
+/* 1. Alap Szekció (Mobile-First) */
+.speed-parallax-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertikális középre igazítás Flexbox-szal */
+  min-height: 35rem; /* ~560px, fix height helyett rugalmas */
+  padding-block: 4rem;
+  padding-inline: 1.5rem;
+  overflow: hidden; /* Ne lógjon ki semmi */
+}
+
+/* ==========================================================
+   PARALLAX TITLE STÍLUSOK
+   ========================================================== */
+
+/* Alapértelmezett, mobilra optimalizált nézet (Mobile-First) */
+.parallax-title {
+  font-family: var(--font-display, sans-serif);
+  font-size: 2rem; /* ~32px mobilokon */
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0; /* A távolságot a szülő elem 'gap' tulajdonsága kezeli */
+}
+
+/* Felfelé építkező töréspont asztali nézethez */
+@media (min-width: 48rem) {
+  .parallax-title {
+    font-size: 3.5rem; /* ~56px nagy kijelzőkön a drámai hatásért */
+    line-height: 1.1;
+  }
+}
+
+/* ==========================================================
+   PARALLAX TEXT STÍLUSOK
+   ========================================================== */
+
+/* Alapértelmezett, mobilra optimalizált nézet (Mobile-First) */
+.parallax-text {
+  font-size: 1rem; /* ~16px mobilokon */
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85); /* Enyhén tompított fehér a jobb olvashatóságért */
+  margin: 0; /* Szigorúan 0, a távolságot a szülő 'gap' tulajdonsága kezeli */
+  max-width: 35rem; /* ~560px, meggátolja, hogy a sorok túl hosszúak és olvashatatlanok legyenek */
+}
+
+/* Felfelé építkező töréspont asztali nézethez */
+@media (min-width: 48rem) {
+  .parallax-text {
+    font-size: 1.125rem; /* ~18px nagyobb kijelzőkön */
+  }
+}
+
+/* 2. A Parallax Varázslat (background-attachment: fixed) */
+.parallax-bg-fixed {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  
+  /* Utazás + Sebesség témájú háttérkép (Unsplash) */
+  background-image: url('https://images.unsplash.com/photo-1494587416117-f102a2ac0a8d?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* EZ adja a vertikális elcsúszást görgetéskor! */
+  background-attachment: fixed;
+}
+
+/* 3. Sötétítő Overlay (Balról jobbra sötétedő gradiens) */
+.parallax-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  /* Mobilokon sötétebb, hogy a balra zárt szöveg jól látszódjon */
+  background: linear-gradient(135deg, rgba(12, 8, 33, 0.95) 0%, rgba(12, 8, 33, 0.6) 100%);
+}
+
+/* 4. A Tartalom (Flexbox, gap) */
+.parallax-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Mobilon balra zárt a könnyebb olvasásért */
+  gap: 1.5rem; /* Margók helyett gap a térközökhöz */
+  max-width: 42rem;
+}
+
+/* 5. Asztali Töréspont (Felfelé építkező @media min-width) */
+@media (min-width: 48rem) {
+  .speed-parallax-section {
+    min-height: 45rem; /* Nagyobb kijelzőn magasabb szekció */
+    padding-block: 6rem;
+    align-items: center; /* Asztali nézetben középre húzzuk a konténert */
+  }
+  
+  .parallax-content {
+    align-items: center; /* Elemek középre zárása */
+    text-align: center; /* Szöveg középre zárása */
+  }
+  
+  /* Asztalinál a háttér gradiense lehet szimmetrikusabb */
+  .parallax-overlay {
+    background: radial-gradient(circle at center, rgba(12, 8, 33, 0.7) 0%, rgba(12, 8, 33, 0.9) 100%);
+  }
+}
+
+
+/* ==========================================================
+   FLUID WORDS SECTION (Kibuggyanó szavak effekt)
+   ========================================================== */
+
+/* Alap szekció (sötét háttér, hogy a színek világítsanak) */
+.fluid-words-section {
+  min-height: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-dark, #0c0821);
+  padding-block: 4rem;
+  padding-inline: 1.5rem;
+  overflow: hidden;
+}
+
+.fluid-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+/* A vonal, ami a "felszínt" szimbolizálja */
+.water-surface {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  /* Ez a vonal adja meg az alapot, amiből a szavak kiemelkednek */
+  border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.25rem;
+}
+
+/* A maszk, ami levágja a szöveget, amíg az "a víz alatt" van */
+.word-mask {
+  overflow: hidden;
+  display: inline-flex;
+}
+
+/* Az animált szavak alapstílusa */
+.rising-word {
+  font-family: var(--font-display, sans-serif);
+  font-size: 2.5rem; /* ~40px mobilon */
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1;
+  /* Alapból lefelé eltolva, a maszk mögé rejtve */
+  transform: translateY(110%);
+  /* Cubic-bezier a rugós, "kibuggyanó" érzésért */
+  animation: riseFromDepths 4s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+}
+
+/* Egyedi színek és késleltetések a szavaknak (A színes dizájn szimbolizálása) */
+.word-1 { color: #ff5bb3; animation-delay: 0s; }
+.word-2 { color: #8b5cf6; animation-delay: 0.2s; }
+.word-3 { color: #6a8bff; animation-delay: 0.4s; }
+.word-4 { color: #00eaee; animation-delay: 0.6s; }
+
+/* Kiegészítő leírás */
+.fluid-description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 35rem;
+  margin: 0;
+}
+
+/* SEO vizuális rejtés osztály (Ezt tedd a globális CSS-be, mindig jól jön) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ==========================================================
+   KULCSKOCKÁK (ANIMÁCIÓ)
+   ========================================================== */
+
+@keyframes riseFromDepths {
+  0%, 15% {
+    transform: translateY(110%) skewY(5deg);
+    opacity: 0;
+  }
+  25%, 85% {
+    transform: translateY(0) skewY(0);
+    opacity: 1;
+  }
+  95%, 100% {
+    transform: translateY(-110%) skewY(-5deg); /* Felfelé tűnik el */
+    opacity: 0;
+  }
+}
+
+/* ==========================================================
+   ASZTALI TÖRÉSPONT
+   ========================================================== */
+@media (min-width: 48rem) {
+  .water-surface {
+    gap: 1rem;
+  }
+  
+  .rising-word {
+    font-size: 4rem; /* ~64px nagyobb kijelzőkön */
+  }
+  
+  .fluid-description {
+    font-size: 1.125rem;
   }
 }
