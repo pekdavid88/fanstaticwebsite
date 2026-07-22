@@ -2,62 +2,85 @@
 (function () {
   "use strict";
 
-  // Scroll shadow on header
-  var header = document.getElementById("site-header");
-  var onScroll = function () {
-    if (window.scrollY > 8) header.classList.add("scrolled");
-    else header.classList.remove("scrolled");
-  };
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
+  const header = document.getElementById("site-header");
+
+  // Scroll shadow a headeren - Forced Reflow mentes megoldás
+  if (header) {
+    let ticking = false;
+
+    const updateHeader = () => {
+      if (window.scrollY > 8) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+      ticking = false;
+    };
+
+    // A befejeződő DOM kirenderelés UTÁN hívjuk meg először (így nincs kényszerített újraszámítás!)
+    requestAnimationFrame(updateHeader);
+
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
+    }, { passive: true });
+  }
 
   // Mobile menu toggle
-  var toggle = document.getElementById("menu-toggle");
-  var menu = document.getElementById("mobile-menu");
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
 
-  var setOpen = function (open) {
-    document.body.classList.toggle("menu-open", open);
-    document.body.style.overflow = open ? "hidden" : "";
-    toggle.setAttribute("aria-expanded", String(open));
-    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-    menu.setAttribute("aria-hidden", String(!open));
-  };
+  if (toggle && menu) {
+    const setOpen = (open) => {
+      document.body.classList.toggle("menu-open", open);
+      document.body.style.overflow = open ? "hidden" : "";
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      menu.setAttribute("aria-hidden", String(!open));
+    };
 
-  toggle.addEventListener("click", function () {
-    setOpen(!document.body.classList.contains("menu-open"));
-  });
+    toggle.addEventListener("click", () => {
+      setOpen(!document.body.classList.contains("menu-open"));
+    });
 
-  // Close menu on link click
-  menu.querySelectorAll("a").forEach(function (a) {
-    a.addEventListener("click", function () { setOpen(false); });
-  });
+    // Close menu on link click
+    menu.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", () => setOpen(false));
+    });
 
-  // Close on Escape
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && document.body.classList.contains("menu-open")) {
-      setOpen(false);
-    }
-  });
+    // Close on Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && document.body.classList.contains("menu-open")) {
+        setOpen(false);
+      }
+    });
+  }
 
   // Rotating headline
-  var words = document.querySelectorAll(".rotator-word:not(.rotator-ghost)");
+  const words = document.querySelectorAll(".rotator-word:not(.rotator-ghost)");
   if (words.length) {
-    var i = 0;
-    setInterval(function () {
+    let i = 0;
+    setInterval(() => {
       words[i].classList.remove("active");
       words[i].classList.add("leaving");
-      var next = (i + 1) % words.length;
+      const next = (i + 1) % words.length;
       words[next].classList.remove("leaving");
       words[next].classList.add("active");
-      var prev = i;
+      const prev = i;
       i = next;
-      setTimeout(function () { words[prev].classList.remove("leaving"); }, 800);
+      setTimeout(() => {
+        words[prev].classList.remove("leaving");
+      }, 800);
     }, 2200);
   }
 
   // Footer year
-  var year = document.getElementById("year");
-  if (year) year.textContent = new Date().getFullYear();
+  const year = document.getElementById("year");
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
 })();
 
 
