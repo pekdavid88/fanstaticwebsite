@@ -117,7 +117,29 @@ button { font: inherit; cursor: pointer; }
   backdrop-filter: blur(8px);
 }
 .cta-ghost:hover { background: #fff; }
-.cta-block { justify-content: center; padding: 1rem; font-size: 0.938rem; }
+/*.cta-block {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 0.9375rem;
+  color: #ffffff;
+  background: var(--gradient-brand);
+  box-shadow: var(--shadow-glow);
+}*/
+
+.cta-block {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;            /* A szöveg hosszához igazodó szélesség */
+  margin-inline: auto;          /* + ÚJ: Horizontálisan középre pozicionálja a gombot */
+  padding: 0.875rem 1.375rem;
+  font-size: 0.9375rem;
+  color: #ffffff;
+  background: var(--gradient-brand);
+  box-shadow: var(--shadow-glow);
+  text-decoration: none;
+}
 
 /* Hamburger button */
 .menu-btn {
@@ -152,6 +174,8 @@ body.menu-open .menu-icon-close { opacity: 1; transform: rotate(0); }
   position: fixed;
   inset: 0;
   z-index: 40;
+  width: 100%;
+  max-width: 100vw;
   pointer-events: none;
   transition: opacity .5s;
   opacity: 0;
@@ -160,6 +184,7 @@ body.menu-open .menu-icon-close { opacity: 1; transform: rotate(0); }
   height: 100dvh; /* Dinamikus magasság a böngésző UI mozgásának lekövetésére */
   padding-bottom: env(safe-area-inset-bottom, 2rem); /* Megakadályozza, hogy a sáv kitakarja az alsó linkeket */
   overflow-y: auto; /* Görgethetőség biztosítása, ha túl sok a menüpont */
+  overflow-x: hidden;
 }
 
 body.menu-open .mobile-menu {
@@ -245,9 +270,10 @@ body.menu-open .mm-link {
 .mm-body { flex: 1; display: flex; flex-direction: column; gap: 4px; }
 .mm-label {
   font-family: var(--font-display);
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 2rem; /* ~32px - Növelt, látványos főcím méret mobilon */
+  font-weight: 300;
   line-height: 1;
+  color: #ffffff; /* + ÚJ: Közvetlen fehér szín megadása */
   transition: background-image .3s;
 }
 .mm-link:hover .mm-label,
@@ -257,7 +283,11 @@ body.menu-open .mm-link {
   background-clip: text;
   color: transparent;
 }
-.mm-desc { font-size: 12px; color: rgba(255,255,255,.5); }
+.mm-desc {
+  font-size: 0.75rem; /* ~12px - rem mértékegységgel */
+  color: #ffffff; /* + ÚJ: Tiszta hófehér (vagy ha finomítani szeretnéd: rgba(255, 255, 255, 0.85)) */
+}
+
 .mm-arrow {
   color: rgba(255,255,255,.4);
   font-size: 18px;
