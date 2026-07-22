@@ -2542,6 +2542,7 @@ body.menu-open .mm-link {
   /* Parallax háttér beállítás (a kép rögzül az ablakhoz, míg az oldal scrollozik) */
   background-image: url('images/earth-bg.webp');
   background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   /*background-attachment: fixed;*/ /* Ez adja a klasszikus, elegáns parallax hatást */
