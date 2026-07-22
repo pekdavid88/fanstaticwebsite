@@ -225,3 +225,29 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => el.classList.add('is-visible'));
   }
 });
+
+//Cinematic scroll
+document.addEventListener("DOMContentLoaded", () => {
+  // Intersection Observer beállítása
+  const revealOptions = {
+    root: null,
+    rootMargin: "0px 0px -15% 0px", // Akkor indul, amikor az elem 15%-a beér a képernyő alján
+    threshold: 0.1
+  };
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Amikor beér a képbe, megkapja az aktiváló osztályt
+        entry.target.classList.add("is-revealed");
+        
+        // Ha csak egyszer akarjuk lejátszani (ne ugráljon fel-le minden görgetésnél)
+        // observer.unobserve(entry.target);
+      }
+    });
+  }, revealOptions);
+
+  // Keresse meg az összes animálandó elemet, és kezdje el figyelni őket
+  const revealElements = document.querySelectorAll(".reveal-item");
+  revealElements.forEach(el => revealObserver.observe(el));
+});

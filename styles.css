@@ -2466,13 +2466,26 @@ body.menu-open .mm-link {
   z-index: 0;
   
   /* Utazás + Sebesség témájú háttérkép (Unsplash) */
-  background-image: url('https://images.unsplash.com/photo-1494587416117-f102a2ac0a8d?q=80&w=2070&auto=format&fit=crop');
+  background-image: url('images/parallax-bg-2.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   
   /* EZ adja a vertikális elcsúszást görgetéskor! */
   background-attachment: fixed;
+}
+
+/* Szöveges elemek stílusa */
+.parallax-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem; /* ~12px */
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ff5bb3;
+  background: rgba(255, 91, 179, 0.1);
+  padding: 0.375rem 0.875rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 91, 179, 0.2);
 }
 
 /* 3. Sötétítő Overlay (Balról jobbra sötétedő gradiens) */
@@ -2516,27 +2529,47 @@ body.menu-open .mm-link {
 
 
 /* ==========================================================
-   FLUID WORDS SECTION (Kibuggyanó szavak effekt)
+   FLUID WORDS SECTION (Parallax háttérrel + Animációkkal)
    ========================================================== */
 
-/* Alap szekció (sötét háttér, hogy a színek világítsanak) */
 .fluid-words-section {
-  min-height: 25rem;
+  position: relative;
+  min-height: 30rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg-dark, #0c0821);
-  padding-block: 4rem;
+  
+  /* Parallax háttér beállítás (a kép rögzül az ablakhoz, míg az oldal scrollozik) */
+  background-image: url('images/earth-bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Ez adja a klasszikus, elegáns parallax hatást */
+  
+  padding-block: 5rem;
   padding-inline: 1.5rem;
   overflow: hidden;
 }
 
+/* Opcionális sötétítő sáv a háttérképre, hogy a szöveg tökéletesen olvasható maradjon */
+.fluid-words-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(12, 8, 33, 0.1); /* Sötétítő réteg */
+  z-index: 1;
+}
+
 .fluid-text-container {
+  position: relative;
+  z-index: 2; /* A tartalom a sötétítő réteg felett helyezkedik el */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
   text-align: center;
+  max-width: 45rem;
+  margin-inline: auto;
 }
 
 /* A vonal, ami a "felszínt" szimbolizálja */
@@ -2545,8 +2578,7 @@ body.menu-open .mm-link {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
-  /* Ez a vonal adja meg az alapot, amiből a szavak kiemelkednek */
-  border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.15);
   padding-bottom: 0.25rem;
 }
 
@@ -2563,13 +2595,11 @@ body.menu-open .mm-link {
   font-weight: 900;
   text-transform: uppercase;
   line-height: 1;
-  /* Alapból lefelé eltolva, a maszk mögé rejtve */
   transform: translateY(110%);
-  /* Cubic-bezier a rugós, "kibuggyanó" érzésért */
   animation: riseFromDepths 4s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
 }
 
-/* Egyedi színek és késleltetések a szavaknak (A színes dizájn szimbolizálása) */
+/* Egyedi színek és késleltetések a szavaknak */
 .word-1 { color: #ff5bb3; animation-delay: 0s; }
 .word-2 { color: #8b5cf6; animation-delay: 0.2s; }
 .word-3 { color: #6a8bff; animation-delay: 0.4s; }
@@ -2578,12 +2608,13 @@ body.menu-open .mm-link {
 /* Kiegészítő leírás */
 .fluid-description {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
   max-width: 35rem;
   margin: 0;
 }
 
-/* SEO vizuális rejtés osztály (Ezt tedd a globális CSS-be, mindig jól jön) */
+/* Vizuális rejtés SEO-hoz */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -2596,7 +2627,7 @@ body.menu-open .mm-link {
 }
 
 /* ==========================================================
-   KULCSKOCKÁK (ANIMÁCIÓ)
+   ANIMÁCIÓ
    ========================================================== */
 
 @keyframes riseFromDepths {
@@ -2609,15 +2640,20 @@ body.menu-open .mm-link {
     opacity: 1;
   }
   95%, 100% {
-    transform: translateY(-110%) skewY(-5deg); /* Felfelé tűnik el */
+    transform: translateY(-110%) skewY(-5deg);
     opacity: 0;
   }
 }
 
 /* ==========================================================
-   ASZTALI TÖRÉSPONT
+   ASZTALI TÖRÉSPONT (Mobile-First felfelé építkezve)
    ========================================================== */
 @media (min-width: 48rem) {
+  .fluid-words-section {
+    min-height: 38rem;
+    padding-block: 7rem;
+  }
+
   .water-surface {
     gap: 1rem;
   }
