@@ -2467,8 +2467,8 @@ body.menu-open .mm-link {
   
   /* Utazás + Sebesség témájú háttérkép (Unsplash) */
   background-image: url('images/parallax-bg-2.webp');
-  background-size: cover;
-  background-size: contain;
+  background-size: cover 100% 100%;
+  
   background-position: center;
   background-repeat: no-repeat;
   
@@ -2542,8 +2542,8 @@ body.menu-open .mm-link {
   
   /* Parallax háttér beállítás (a kép rögzül az ablakhoz, míg az oldal scrollozik) */
   background-image: url('images/earth-bg.webp');
-  background-size: cover;
-  background-size: contain;
+  background-size: cover 100% 100%;
+  
   background-position: center;
   background-repeat: no-repeat;
   /*background-attachment: fixed;*/ /* Ez adja a klasszikus, elegáns parallax hatást */
