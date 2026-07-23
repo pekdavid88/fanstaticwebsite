@@ -2466,13 +2466,14 @@ body.menu-open .mm-link {
   z-index: 0;
   
   /* Utazás + Sebesség témájú háttérkép (Unsplash) */
-  background-image: url('images/parallax-bg-2.webp');
+  background-image: url('images/parallax-bg-mobile.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   
+    
   /* EZ adja a vertikális elcsúszást görgetéskor! */
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
 }
 
 /* Szöveges elemek stílusa */
@@ -2517,6 +2518,7 @@ body.menu-open .mm-link {
     min-height: 45rem; /* Nagyobb kijelzőn magasabb szekció */
     padding-block: 6rem;
     align-items: center; /* Asztali nézetben középre húzzuk a konténert */
+    background-image: url('images/parallax-bg-2.webp');
   }
   
   .parallax-content {
@@ -2543,11 +2545,11 @@ body.menu-open .mm-link {
   justify-content: center;
   
   /* Parallax háttér beállítás (a kép rögzül az ablakhoz, míg az oldal scrollozik) */
-  background-image: url('images/earth-bg.webp');
+  background-image: url('images/earth-bg-mobile.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Ez adja a klasszikus, elegáns parallax hatást */
+  /*background-attachment: fixed;*/ /* Ez adja a klasszikus, elegáns parallax hatást */
   
   padding-block: 5rem;
   padding-inline: 1.5rem;
@@ -2655,6 +2657,11 @@ body.menu-open .mm-link {
   .fluid-words-section {
     min-height: 38rem;
     padding-block: 7rem;
+    background-image: url('images/earth-bg-2.webp');
+    
+  }
+  .parallax-bg-fixed {
+    background-attachment: fixed;
   }
 
   .water-surface {
