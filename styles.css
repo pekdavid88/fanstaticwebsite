@@ -2467,8 +2467,7 @@ body.menu-open .mm-link {
   
   /* Utazás + Sebesség témájú háttérkép (Unsplash) */
   background-image: url('images/parallax-bg-2.webp');
-  background-size: cover 100% 100%;
-  
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   
@@ -2510,6 +2509,9 @@ body.menu-open .mm-link {
 }
 
 /* 5. Asztali Töréspont (Felfelé építkező @media min-width) */
+
+/* Asztali nézetben (min-width: 48rem) kapcsoljuk be a parallax hatást */
+
 @media (min-width: 48rem) {
   .speed-parallax-section {
     min-height: 45rem; /* Nagyobb kijelzőn magasabb szekció */
@@ -2542,11 +2544,10 @@ body.menu-open .mm-link {
   
   /* Parallax háttér beállítás (a kép rögzül az ablakhoz, míg az oldal scrollozik) */
   background-image: url('images/earth-bg.webp');
-  background-size: cover 100% 100%;
-  
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /*background-attachment: fixed;*/ /* Ez adja a klasszikus, elegáns parallax hatást */
+  background-attachment: fixed; /* Ez adja a klasszikus, elegáns parallax hatást */
   
   padding-block: 5rem;
   padding-inline: 1.5rem;
@@ -2654,7 +2655,6 @@ body.menu-open .mm-link {
   .fluid-words-section {
     min-height: 38rem;
     padding-block: 7rem;
-    background-attachment: fixed;
   }
 
   .water-surface {
