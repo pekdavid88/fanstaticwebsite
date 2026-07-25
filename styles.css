@@ -2882,15 +2882,26 @@ body.menu-open .mm-link {
   max-width: 35rem; /* ~560px, meggátolja, hogy a sorok túl hosszúak és olvashatatlanok legyenek */
 }
 
+.parallax-bg-fixed {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  
+  /* Utazás + Sebesség témájú háttérkép (Unsplash) */
+  background-image: url('images/parallax-bg-mobile.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+
 /* Felfelé építkező töréspont asztali nézethez */
 @media (min-width: 48rem) {
   .parallax-text {
     font-size: 1.125rem; /* ~18px nagyobb kijelzőkön */
   }
-}
-
-/* 2. A Parallax Varázslat (background-attachment: fixed) */
-.parallax-bg-fixed {
+  
+  .parallax-bg-fixed {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -2904,6 +2915,10 @@ body.menu-open .mm-link {
   /* EZ adja a vertikális elcsúszást görgetéskor! */
   background-attachment: fixed;
 }
+}
+
+/* 2. A Parallax Varázslat (background-attachment: fixed) */
+
 
 /* Szöveges elemek stílusa */
 .parallax-tag {
@@ -2973,12 +2988,11 @@ body.menu-open .mm-link {
   justify-content: center;
   
   /* Parallax háttér beállítás (a kép rögzül az ablakhoz, míg az oldal scrollozik) */
-  background-image: url('images/earth-bg-2.webp');
+  background-image: url('images/earth-bg-mobile.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Ez adja a klasszikus, elegáns parallax hatást */
-  
+    
   padding-block: 5rem;
   padding-inline: 1.5rem;
   overflow: hidden;
@@ -3085,6 +3099,15 @@ body.menu-open .mm-link {
   .fluid-words-section {
     min-height: 38rem;
     padding-block: 7rem;
+    background-image: url('images/earth-bg-2.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Ez adja a klasszikus, elegáns parallax hatást */
+  
+  padding-block: 5rem;
+  padding-inline: 1.5rem;
+  overflow: hidden;
   }
 
   .water-surface {
