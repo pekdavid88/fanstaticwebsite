@@ -1682,7 +1682,7 @@ body.menu-open .mm-link {
 .original-price {
   font-size: 0.875rem; /* ~14px */
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--fg);
   text-decoration: line-through;
   line-height: 1;
 }
@@ -1918,9 +1918,26 @@ body.menu-open .mm-link {
   background-color: rgba(139, 92, 246, 0.15);
   border: 1px solid rgba(139, 92, 246, 0.4);
   border-radius: 2rem;
-  font-size: 0.875rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #ff5bb3;
+}
+
+.optional-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 0.25rem;
+  padding-inline: 0.75rem;
+  background-color: rgba(0, 234, 238, 0.1);
+  border: 1px solid #00eaee;
+  border-radius: 1rem;
+  color: #00eaee;
+  font-size: 0.75rem; /* ~12px */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  width: fit-content;
 }
 
 /* Árazás blokk (Flexbox, nincs absolute) */
@@ -2058,6 +2075,14 @@ body.menu-open .mm-link {
 
   .maintenance-card {
     padding: 3rem;
+  }
+}
+
+@media (min-width: 48rem) {
+  .optional-badge {
+    font-size: 0.8125rem; /* ~13px */
+    padding-block: 0.35rem;
+    padding-inline: 0.875rem;
   }
 }
 
