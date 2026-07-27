@@ -948,7 +948,7 @@ body.menu-open .mm-link {
 /* UI Card Skins for Concepts */
 .screen-marea {
   background-image:
-    /*linear-gradient(180deg, rgba(20, 14, 46, 0.3) 0%, rgba(20, 14, 46, 0.85) 100%),*/
+    linear-gradient(180deg, rgba(20, 14, 46, 0.3) 0%, rgba(20, 14, 46, 0.85) 100%),
     url('images/reference-card-1-bg.webp');
   background-size: contain;
   background-position: center top; /* A weboldal tetejét/hero részét helyezi előtérbe */
@@ -957,8 +957,8 @@ body.menu-open .mm-link {
 
 .screen-lumina {
   background-image:
-    /*linear-gradient(180deg, rgba(20, 14, 46, 0.3) 0%, rgba(20, 14, 46, 0.85) 100%),*/
-    url('images/reference-card-1-bg.webp');
+    linear-gradient(180deg, rgba(20, 14, 46, 0.3) 0%, rgba(20, 14, 46, 0.85) 100%),
+    url('images/reference-card-2-bg.webp');
   background-size: contain;
   background-position: center top; /* A weboldal tetejét/hero részét helyezi előtérbe */
   background-repeat: no-repeat;
@@ -966,8 +966,8 @@ body.menu-open .mm-link {
 
 .screen-velvet {
   background-image:
-    /*linear-gradient(180deg, rgba(20, 14, 46, 0.3) 0%, rgba(20, 14, 46, 0.85) 100%),*/
-    url('images/reference-card-1-bg.webp');
+    linear-gradient(180deg, rgba(20, 14, 46, 0.3) 0%, rgba(20, 14, 46, 0.85) 100%),
+    url('images/reference-card-3-bg.webp');
   background-size: contain;
   background-position: center top; /* A weboldal tetejét/hero részét helyezi előtérbe */
   background-repeat: no-repeat;
@@ -1110,6 +1110,28 @@ body.menu-open .mm-link {
 }
 
 /* ==========================================================
+   INLINE LINK STYLES (Mobile-First Base)
+   ========================================================== */
+
+/* A beágyazott hivatkozások vizuális kiemelése a bekezdéseken belül */
+.inline-link {
+  color: var(--brand-purple);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.25rem; /* Az aláhúzás elszeparálása a betűktől */
+  text-decoration-thickness: 0.0625rem; /* ~1px finom aláhúzás */
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+/* Hover és Focus állapot a jó felhasználói élményért (UX) */
+.inline-link:hover,
+.inline-link:focus-visible {
+  color: #660066;
+  text-decoration-color: #00eaee;
+  outline: none;
+}
+
+/* ==========================================================
    RESPONSIVE BREAKPOINTS (Mobile-First expansion)
    ========================================================== */
    
@@ -1134,6 +1156,10 @@ body.menu-open .mm-link {
 
   .work-cta-content {
     max-width: 28rem;
+  }
+  
+  .inline-link {
+    text-underline-offset: 0.3125rem; /* Kicsit tágasabb aláhúzás nagyobb képernyőn */
   }
 }
 
