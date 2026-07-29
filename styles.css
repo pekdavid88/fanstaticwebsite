@@ -1650,6 +1650,73 @@ body.menu-open .mm-link {
 }
 
 
+
+/* ==========================================================
+   COMING SOON OVERLAY STYLES
+   ========================================================== */
+
+/* Tiltjuk a kártya interakcióit és lebegő effektjét, ha inaktív */
+.pricing-card.is-disabled {
+  overflow: hidden; /* Biztosítja, hogy az overlay lekerekítése kövesse a kártyáét */
+  pointer-events: none; /* Kikapcsolja a belső elemek kattinthatóságát */
+}
+
+.pricing-card.is-disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Áttetsző és homályos hátterű overlay */
+.pricing-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.65); /* Világos témához; ha dark mode-ot használsz: rgba(15, 15, 20, 0.75) */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 10;
+  border-radius: inherit;
+  pointer-events: auto; /* Ha az overlayre külön akarsz egeret engedni */
+}
+
+/* Középső információskártya stílusa */
+.pricing-overlay-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 260px;
+}
+
+.coming-soon-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  background: var(--brand-purple);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(161, 91, 255, 0.4);
+}
+
+.coming-soon-text {
+  font-size: 0.844rem;
+  line-height: 1.5;
+  color: var(--fg);
+  font-weight: 500;
+  margin: 0;
+}
+
+
 /* ==========================================================
    RESPONSIVE BREAKPOINTS (Mobile-First expansion)
    ========================================================== */
